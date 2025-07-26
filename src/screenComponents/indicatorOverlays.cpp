@@ -161,10 +161,10 @@ void GuiIndicatorOverlays::drawAlertLevel(sp::RenderTarget& renderer)
     switch(my_spaceship->alert_level)
     {
     case AL_RedAlert:
-        multiply_color = glm::u8vec4(255, 192, 192, 255);
+        // multiply_color = glm::u8vec4(255, 192, 192, 255);
         break;
     case AL_YellowAlert:
-        multiply_color = glm::u8vec4(255, 255, 192, 255);
+        // multiply_color = glm::u8vec4(255, 255, 192, 255);
         break;
     case AL_Normal:
     default:
