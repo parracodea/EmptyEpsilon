@@ -148,12 +148,12 @@ RelayScreen::RelayScreen(GuiContainer* owner, bool allow_comms)
     launch_probe_button->setSize(GuiElement::GuiSizeMax, 50)->setVisible(my_spaceship && my_spaceship->getCanLaunchProbe());
 
     // Reputation display.
-    info_reputation = new GuiKeyValueDisplay(option_buttons, "INFO_REPUTATION", 0.4f, tr("Reputation") + ":", "");
-    info_reputation->setSize(GuiElement::GuiSizeMax, 40);
+    // info_reputation = new GuiKeyValueDisplay(option_buttons, "INFO_REPUTATION", 0.4f, tr("Reputation") + ":", "");
+    // info_reputation->setSize(GuiElement::GuiSizeMax, 40);
 
     // Scenario clock display.
-    info_clock = new GuiKeyValueDisplay(option_buttons, "INFO_CLOCK", 0.4f, tr("Clock") + ":", "");
-    info_clock->setSize(GuiElement::GuiSizeMax, 40);
+    // info_clock = new GuiKeyValueDisplay(option_buttons, "INFO_CLOCK", 0.4f, tr("Clock") + ":", "");
+    // info_clock->setSize(GuiElement::GuiSizeMax, 40);
 
     (new GuiAlertLevelSelect(this, ""))->setPosition(-20, -70, sp::Alignment::BottomRight)->setSize(300, GuiElement::GuiSizeMax)->setAttribute("layout", "verticalbottom");
 
@@ -293,10 +293,10 @@ void RelayScreen::onDraw(sp::RenderTarget& renderer)
         link_to_science_button->setVisible(my_spaceship->getCanLaunchProbe());
         hack_target_button->setVisible(my_spaceship->getCanHack());
 
-        info_reputation->setValue(string(my_spaceship->getReputationPoints(), 0));
+        // info_reputation->setValue(string(my_spaceship->getReputationPoints(), 0));
 
         // Update mission clock
-        info_clock->setValue(gameGlobalInfo->getMissionTime());
+        // info_clock->setValue(gameGlobalInfo->getMissionTime());
 
         launch_probe_button->setText(tr("Launch Probe") + " (" + string(my_spaceship->scan_probe_stock) + ")");
     }
