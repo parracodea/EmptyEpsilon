@@ -30,8 +30,9 @@ ScreenMainScreen::ScreenMainScreen(RenderLayer* render_layer)
     viewport = new GuiViewportMainScreen(this, "VIEWPORT");
     viewport->setPosition(0, 0, sp::Alignment::TopLeft)->setSize(GuiElement::GuiSizeMax, GuiElement::GuiSizeMax);
 
-    main_screen_radar = new GuiRadarView(viewport, "VIEWPORT_RADAR", nullptr);
-    main_screen_radar->setStyle(GuiRadarView::CircularMasked)->setSize(200, 200)->setPosition(-20, 20, sp::Alignment::TopRight);
+    // Don't show the mini-radar in the upper right of the main screen
+    // main_screen_radar = new GuiRadarView(viewport, "VIEWPORT_RADAR", nullptr);
+    // main_screen_radar->setStyle(GuiRadarView::CircularMasked)->setSize(200, 200)->setPosition(-20, 20, sp::Alignment::TopRight);
 
     tactical_radar = new GuiRadarView(this, "TACTICAL", nullptr);
     tactical_radar->setPosition(0, 0, sp::Alignment::TopLeft)->setSize(GuiElement::GuiSizeMax, GuiElement::GuiSizeMax);
