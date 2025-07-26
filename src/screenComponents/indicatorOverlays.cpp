@@ -17,7 +17,7 @@ GuiIndicatorOverlays::GuiIndicatorOverlays(GuiContainer* owner)
     setSize(GuiElement::GuiSizeMax, GuiElement::GuiSizeMax);
 
     shield_hit_overlay = new GuiOverlay(this, "SHIELD_HIT", glm::u8vec4(64, 64, 128, 0));
-    hull_hit_overlay = new GuiOverlay(this, "HULL_HIT", glm::u8vec4(255, 0, 0, 0));
+    // hull_hit_overlay = new GuiOverlay(this, "HULL_HIT", glm::u8vec4(255, 0, 0, 0));
     shield_low_warning_overlay = new GuiOverlay(this, "SHIELD_LOW", glm::u8vec4(255, 0, 0, 0));
     pause_overlay = new GuiOverlay(this, "PAUSE", glm::u8vec4(0, 0, 0, 128));
     (new GuiPanel(pause_overlay, "PAUSE_BOX"))->setPosition(0, 0, sp::Alignment::Center)->setSize(500, 100);
@@ -71,11 +71,11 @@ void GuiIndicatorOverlays::onDraw(sp::RenderTarget& renderer)
             shield_low_warning_overlay->setAlpha(0);
         }
 
-        hull_hit_overlay->setAlpha(128 * (my_spaceship->hull_damage_indicator / 1.5f));
+        // hull_hit_overlay->setAlpha(128 * (my_spaceship->hull_damage_indicator / 1.5f));
     }else{
         shield_hit_overlay->setAlpha(0);
         shield_low_warning_overlay->setAlpha(0);
-        hull_hit_overlay->setAlpha(0);
+        // hull_hit_overlay->setAlpha(0);
     }
 
     if (my_spaceship)
